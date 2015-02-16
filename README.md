@@ -18,7 +18,7 @@ Mapper Pseudo code
   
 
 Reducer Pseudo code
-
+ 
  class Reducer	
       method Initialize
         marginal = 0;
