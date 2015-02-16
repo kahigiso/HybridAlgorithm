@@ -3,28 +3,28 @@ Hadoop MapReduce Job
 Crystal ball to predict events that may happen once a certain event happened
 
 Mapper Pseudo code
-<code>
-class Mapper
-  method Initialize
+
+ class Mapper
+   method Initialize
 	H = new AssociativeArray()	
 	
-  method Map(docid a; doc d)
+   method Map(docid a; doc d)
 	for all term w in doc d do
 	     for all term u in neighbor(w) do
 		H{pair(w; u)} = H{pair(w; u)} + 1
-  method close
+   method close
 	for all pair p in H do
 	     Emit(pair p; count H{pair p})
-</code>
+  
 
 Reducer Pseudo code
-<code>
-class Reducer	
+
+ class Reducer	
       method Initialize
         marginal = 0;
         H = new AssociativeArray ()  
 
-    method Reduce(pair(w; u); counts[c1;c2; …])
+   method Reduce(pair(w; u); counts[c1;c2; …])
 	if (currentTerm == null) then
 		currentTerm = w;
  	else if (currentTerm != w) then
@@ -43,4 +43,4 @@ class Reducer
 	for all term u in H do
 	      H{u} = H{u} / marginal
 	      Emit(term currentTerm, stripe H)
-</code>
+
