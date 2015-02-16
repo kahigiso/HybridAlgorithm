@@ -24,6 +24,7 @@ public class ReducerHybridAppraoch extends Reducer<WordPairHybrid, IntWritable, 
 			
 			WordPairMap wordPairMap = new WordPairMap();
 			for(String set: associtar.keySet()){
+				//Data are being lost here, find a better way to wrap doubles - the 10 is just for temporary display
 				Double dwri =((double) associtar.get(set)/marginal)*10;
 				Text textKey = new Text(set);
 				wordPairMap.put(textKey,new IntWritable(dwri.intValue()));
