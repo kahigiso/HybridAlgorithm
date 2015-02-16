@@ -27,12 +27,12 @@ Reducer Pseudo code
    method Reduce(pair(w; u); counts[c1;c2; …])
 	if (currentTerm == null) then
 		currentTerm = w;
- 	else if (currentTerm != w) then
+	else if (currentTerm != w) then
 		for all term u in H do
 			H{u} = H{u} / marginal
 			Emit(term currentTerm, stripe H)
 	          marginal = 0;
-                   H.clear()	        
+                  H.clear()	        
 	          currentTerm = w;
 	
 	for all count c in counts[c1;c2; …] do
